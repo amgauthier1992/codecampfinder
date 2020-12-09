@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from "../components/Logo";
+import Logo from "../../components/Logo/Logo";
 import { Link } from "react-router-dom";
-import RegistrationForm from '../components/RegistrationForm';
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 
 export default function RegisterPage() {
   return (
@@ -14,7 +14,7 @@ export default function RegisterPage() {
           </button>
         </Link>
         <h2 className="registration-title">Sign up</h2>
-        <Link to="/auth/login">
+        <Link to="/login">
           Already have an account?
         </Link>
         <hr/>

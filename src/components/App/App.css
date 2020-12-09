@@ -162,7 +162,7 @@ h3 {
 }
 
 .sliding-background {
-  background: url("./img/1.png") repeat-x;
+  background: url("../../img/1.png") repeat-x;
   height: 100%;
   width: 5076px;
   animation: slide 60s linear infinite;

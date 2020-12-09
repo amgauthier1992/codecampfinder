@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from 'react-router-dom'
-import Logo from "../components/Logo";
-import Nav from "../components/Nav";
-import ImageSlider from "../components/ImageSlider"
-import Icons from "../components/Icons"
+import React from "react";
+import { Link } from 'react-router-dom';
+import Logo from "../../components/Logo/Logo";
+import Nav from "../../components/Nav/Nav";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
+import Icons from "../../components/Icons/Icons";
 
 export default function HomePage(){
   return <>

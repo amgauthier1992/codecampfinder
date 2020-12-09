@@ -1,12 +1,12 @@
 import React from "react"
-import htmlImg from '../img/html.png'
-import cssImg from '../img/css.png'
-import jsImg from '../img/js.png'
-import pyImg from '../img/py.png'
-import cSharpImg from '../img/csharp.jpg'
-import rubyImg from '../img/ruby.png'
-import javaImg from '../img/java.png'
-import swiftImg from '../img/swift.jpg'
+import htmlImg from '../../img/html.png'
+import cssImg from '../../img/css.png'
+import jsImg from '../../img/js.png'
+import pyImg from '../../img/py.png'
+import cSharpImg from '../../img/csharp.jpg'
+import rubyImg from '../../img/ruby.png'
+import javaImg from '../../img/java.png'
+import swiftImg from '../../img/swift.jpg'
 
 export default function Icons(){
   return (

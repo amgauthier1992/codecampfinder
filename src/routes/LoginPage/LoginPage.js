@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Logo from "../components/Logo"
-import LoginForm from "../components/LoginForm"
+import Logo from "../../components/Logo/Logo"
+import LoginForm from "../../components/LoginForm/LoginForm"
 
 export default function LoginPage(){
   return (

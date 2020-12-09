@@ -1,12 +1,12 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
-import config from '../config';
-// import UsersContext from "../contexts/users-context";
-import Context from "../contexts/Context"
-import ValidationError from '../components/ValidationError';
+import AuthContext from '../../contexts/AuthContext'
+import AuthApiService from '../../services/auth-api-service'
+import { withAppContext } from '../../contexts/AppContext';
+import Validator from '../Validator/Validator';
 
 class RegistrationForm extends React.Component {
-  static contextType = Context;
+  static contextType = AuthContext
+
   state = {
     user_name: {
       value: '',
@@ -29,15 +29,6 @@ class RegistrationForm extends React.Component {
       touched: false,
     },
     error: null
-  }
-
-  directToLogin = () => {
-    setTimeout(this.props.history.push('/auth/login'), 5000)
-    return (
-      <div className="success-reg">
-        <span>Success! Redirecting to the login page</span>
-      </div>
-    )
   }
 
   onUsernameChange = (user_name) => {
@@ -75,6 +66,9 @@ class RegistrationForm extends React.Component {
     if (user_name.trim() == "") {
       return "Please create a username";
     }
+    else if (user_name.startsWith(' ') || user_name.endsWith(' ')) {
+      return "Username cannot start or end with empty spaces"
+    }
   }
   
   //add a legend for password requirements? so that the user knows them upon getting to registration section. 
@@ -83,7 +77,10 @@ class RegistrationForm extends React.Component {
     if (password.trim() == "") {
       return "Please create a password"
     }
-    if (!password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{8,}$/)) {
+    else if (password.startsWith(' ') || password.endsWith(' ')) {
+      return "Password cannot start or end with empty spaces"
+    }
+    else if (!password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{8,}$/)) {
       return "Password must contain at least 8 characters including: at least 1 number, 1 lowercase letter, 1 uppercase letter and 1 special character"
     }
   }
@@ -101,12 +98,18 @@ class RegistrationForm extends React.Component {
     if (first_name.trim() == "") {
       return "Please supply your first name";
     }
+    else if (first_name.startsWith(' ') || first_name.endsWith(' ')) {
+      return "First name cannot start or end with empty spaces"
+    }
   }
 
   validateLastName = () => {
     const last_name = this.state.last_name.value;
     if (last_name.trim() == "") {
       return "Please supply your last name";
+    }
+    else if (last_name.startsWith(' ') || last_name.endsWith(' ')) {
+      return "Last name cannot start or end with empty spaces"
     }
   }
 
@@ -121,38 +124,25 @@ class RegistrationForm extends React.Component {
     })
   }
 
-  handleRegistration = (event) => {
-    event.preventDefault();
-    const { user_name, password, first_name, last_name } = this.state
-    const user = { 
-      user_name: user_name.value, 
-      password: password.value,
-      first_name: first_name.value,
-      last_name: last_name.value
+  handleRegistration = async (e) => {
+    e.preventDefault();
+    this.setState({ error: null })
+    const { first_name, last_name, user_name, password } = this.state
+    const newUser = { first_name, last_name, user_name, password }
+    const { setLoading } = this.props.appContext
+
+    try {
+      setLoading(true)
+      const savedUser = await AuthApiService.createUser(newUser)
+      this.context.login(savedUser.authToken)
+      delete savedUser.authToken
+      this.context.setCurrentUser(savedUser)
+      setLoading(true)
+      // this should load /dashboard
+    } catch(err) {
+      this.setState({ error: err.message }, setLoading(false))
     }
-    fetch(`${config.API_ENDPOINT}/users`, {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "content-type": "application/json",
-        "Authorization": `Bearer ${config.API_KEY}`
-      }
-    })
-      .then(res => {
-        if(!res.ok) {
-          throw new Error("Something went wrong, please try again later");
-        }
-        return res.json()
-      })
-      .then(() => {
-        this.directToLogin()
-      })
-      .catch((err) => {
-        this.setState({
-          error: err.message,
-        })
-      })
-  } 
+  }
 
   render(){
     return (
@@ -167,7 +157,7 @@ class RegistrationForm extends React.Component {
           required
         />
         {this.state.first_name.touched && (
-        <ValidationError message={this.validateFirstName()} />
+        <Validator message={this.validateFirstName()} />
         )}
         <label id="last_name" htmlFor="last_name" className="registration-label">Last Name</label>
         <input
@@ -179,7 +169,7 @@ class RegistrationForm extends React.Component {
           required
         />
         {this.state.last_name.touched && (
-        <ValidationError message={this.validateLastName()} />
+        <Validator message={this.validateLastName()} />
         )}
         <label id="user_name" htmlFor="user_name" className="registration-label">Username</label>
         <input
@@ -191,7 +181,7 @@ class RegistrationForm extends React.Component {
           required
         />
         {this.state.user_name.touched && (
-        <ValidationError message={this.validateUsername()} />
+        <Validator message={this.validateUsername()} />
         )}
         <label id="password" htmlFor="password" className="registration-label">Password</label>
         <input
@@ -203,7 +193,7 @@ class RegistrationForm extends React.Component {
           required
         />
         {this.state.password.touched && (
-        <ValidationError message={this.validatePassword()} />
+        <Validator message={this.validatePassword()} />
         )}
         <label id="repeatPassword" htmlFor="repeatPassword" className="registration-label">Confirm Password</label>
         <input
@@ -215,7 +205,7 @@ class RegistrationForm extends React.Component {
           required
         />
         {this.state.repeatPassword.touched && (
-        <ValidationError message={this.validateRepeatPassword()} />
+        <Validator message={this.validateRepeatPassword()} />
         )}
         <div className="registration-btn-controls">
           <button
@@ -237,4 +227,4 @@ class RegistrationForm extends React.Component {
   }
 }
 
-export default withRouter(RegistrationForm);
+export default withAppContext(RegistrationForm);

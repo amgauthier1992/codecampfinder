@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import Logo from "../components/Logo"
-import ContactForm from "../components/ContactForm"
+import Logo from "../../components/Logo/Logo"
+import ContactForm from "../../components/ContactForm/ContactForm"
 
 export default function ContactPage(){
   return (

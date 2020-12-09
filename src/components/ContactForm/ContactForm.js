@@ -1,6 +1,7 @@
 import React from 'react'
-// import ValidationError from './ValidationError'
-import config from '../config'
+import Validator from '../Validator/Validator'
+import config from '../../config'
+import './ContactForm.css';
 
 class ContactForm extends React.Component {
   state = {
@@ -135,9 +136,9 @@ class ContactForm extends React.Component {
           onChange={(e) => this.onNameChange(e.target.value)}
           required
         />
-        {/* {this.state.name.touched && (
-          <ValidationError message={this.validateName()} />
-        )} */}
+        {this.state.name.touched && (
+          <Validator message={this.validateName()} />
+        )}
         <label id="email" htmlFor="email" className="contact-label">Email</label>
         <input
           id="email"
@@ -148,9 +149,9 @@ class ContactForm extends React.Component {
           onChange={(e) => this.onEmailAddressChange(e.target.value)}
           required
         />
-        {/* {this.state.emailAddress.touched && (
-          <ValidationError message={this.validateEmailAddress()} />
-        )} */}
+        {this.state.emailAddress.touched && (
+          <Validator message={this.validateEmailAddress()} />
+        )}
         <label id="subject" htmlFor="subject" className="contact-label">Subject</label>
         <input
           id="subject"
@@ -160,9 +161,9 @@ class ContactForm extends React.Component {
           onChange={(e) => this.onSubjectChange(e.target.value)}
           required
         />
-        {/* {this.state.subject.touched && (
-          <ValidationError message={this.validateSubject()} />
-        )} */}
+        {this.state.subject.touched && (
+          <Validator message={this.validateSubject()} />
+        )}
         <label id="message" htmlFor="message" className="contact-label">Message</label>
         <textarea
           id="message"
@@ -174,9 +175,9 @@ class ContactForm extends React.Component {
           onChange={(e) => this.onMsgChange(e.target.value)}
           required
         />
-        {/* {this.state.message.touched && (
-          <ValidationError message={this.validateMsg()} />
-        )} */}
+        {this.state.message.touched && (
+          <Validator message={this.validateMsg()} />
+        )}
         <div className="contact-btn-controls">
           <button
             className="contact-reset"
