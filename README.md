@@ -24,7 +24,7 @@ _Disclaimer_ - Information regarding bootcamps and courses, especially informati
 
 ## Quick App Demo
 
-![Imgur](https://imgur.com/a/elmWPOp)
+![](https://imgur.com/a/elmWPOp)
 
 ## Technology
 
