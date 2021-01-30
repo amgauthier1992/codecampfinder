@@ -24,10 +24,10 @@ _Disclaimer_ - Information regarding bootcamps and courses, especially informati
 
 ## Quick App Demo
 
-![Login]https://i.imgur.com/KEI6rrS.png
-![Dashboard]https://i.imgur.com/T8urHrY.png
-![Search]https://i.imgur.com/8rwZH5P.png
-![Results]https://i.imgur.com/9wJp1PK.png
+![Login](https://i.imgur.com/KEI6rrS.png)
+![Dashboard](https://i.imgur.com/T8urHrY.png)
+![Search](https://i.imgur.com/8rwZH5P.png)
+![Results](https://i.imgur.com/9wJp1PK.png)
 
 ## Technology
 
