@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# CodeCampFinder Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Find a coding bootcamp that's right for you. Search for coding bootcamps and their associated course offerings based on your location and individualized criteria.
 
-## Available Scripts
+This repo is the front-end client, built in React. You can see the app live at [customUrl](customUrl)
 
-In the project directory, you can run:
+To check out the app, you can use the demo account prior to creating an actual account.
 
-### `npm start`
+#### Demo Account Details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- username: testUser123
+- password: Abcd123!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Introduction
 
-### `npm test`
+With coding bootcamps on the rise as a potential alternative to break into tech, and with so many options for prospective students looking to delve into an exciting new career, it's hard to decide which institution aligns best with your values and will actually help you achieve your goals. This application was designed to serve as a tool to assist and streamline the process of exploring some of the nation's most popular coding bootcamps and their available courses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_Disclaimer_ - Information regarding bootcamps and courses, especially information surrounding financing and tuition figures are constantly fluid and changing. We try our best to keep all of this information up-to-date, but for the most accurate information, you will want to visit a bootcamp's website via the app directly.
 
-### `npm run build`
+## Future Developments
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Implement a portal specific to bootcamp administrators that allows them to update pertinent information for their bootcamp and individual course offerings.
+- Allow admins to add new courses to their bootcamps course catalog.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Quick App Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Imgur](https://imgur.com/a/elmWPOp)
 
-### `npm run eject`
+## Technology
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Front End
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- HTML5
+- CSS3 (vanilla no libraries/frameworks)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Testing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Jest
 
-## Learn More
+#### Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Deployed via Vercel
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+Run `npm install` to load dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Run `npm test` to ensure a stable build
 
-### Analyzing the Bundle Size
+This is only the front end client, so to develop locally you'll need the backend server as well.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To get the backend up and running see [https://github.com/amgauthier1992/codecampfinder-server](https://github.com/amgauthier1992/codecampfinder-server)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployments are handled through Vercel (formerly known as Zeit) and can be run via `npm run deploy`

@@ -1,18 +1,19 @@
-import config from '../config'
-
 const TokenService = {
   saveAuthToken(token) {
-    window.localStorage.setItem(config.TOKEN_KEY, token)
+    window.localStorage.setItem('token', token);
   },
   getAuthToken() {
-    return window.localStorage.getItem(config.TOKEN_KEY)
+    return window.localStorage.getItem('token');
   },
   clearAuthToken() {
-    window.localStorage.removeItem(config.TOKEN_KEY)
+    window.localStorage.removeItem('token');
   },
   hasAuthToken() {
-    return !!TokenService.getAuthToken()
+    return !!TokenService.getAuthToken();
   },
+  getPayload() {
+    return JSON.parse(atob(this.getAuthToken().split('.')[1]));
+  }
 }
 
-export default TokenService
+export default TokenService;

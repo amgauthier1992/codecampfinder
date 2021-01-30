@@ -1,0 +1,133 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.dashboard-container {
+  display: flex;
+  background-image: url("../../img/header-background.png");
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.dashboard-greeting {
+  margin-top: -0.5rem;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+.dashboard-span {
+  font-size: 1em;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userCourses-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.4em;
+}
+
+.null-courses {
+  display: block;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.course-name {
+  font-size: 1.1em;
+}
+
+.bootcamp-name {
+  font-size: 1em;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .dashboard-greeting {
+    font-size: 2.2em;
+  }
+  .dashboard-span {
+    font-size: 1.3em;
+  }
+  .dashboard-span,
+  .null-courses {
+    font-size: 1.3em;
+  }
+
+  .userCourses-header {
+    font-size: 1.8em;
+  }
+
+  .course-name {
+    font-size: 1.4em;
+  }
+
+  .bootcamp-name {
+    font-size: 1.3em;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .dashboard-greeting {
+    font-size: 2.4em;
+    text-align: center;
+  }
+
+  .dashboard-span {
+    width: 75%;
+  }
+
+  .dashboard-span,
+  .null-courses {
+    font-size: 1.5em;
+  }
+
+  .userCourses-header {
+    font-size: 2em;
+  }
+
+  .course-name {
+    font-size: 1.5em;
+  }
+
+  .bootcamp-name {
+    font-size: 1.4em;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .dashboard-greeting {
+    font-size: 2.8em;
+    text-align: center;
+  }
+
+  .dashboard-span,
+  .null-courses {
+    font-size: 1.7em;
+  }
+
+  .userCourses-header {
+    font-size: 2.4em;
+  }
+
+  .course-name {
+    font-size: 1.8em;
+  }
+
+  .bootcamp-name {
+    font-size: 1.7em;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

@@ -1,0 +1,103 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.top-banner {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  background-color: rgba(204, 134, 30, 0.993);
+  height: 5rem;
+  width: 100%;
+}
+
+.hero-img {
+  height: auto;
+  width: 100%;
+}
+
+.app-header {
+  display: none;
+}
+
+.app-sub-header {
+  color: #0f0f0ff3;
+  margin-top: 1rem;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .app-header {
+    display: block;
+    color: #0f0f0ff3;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .top-banner {
+    height: 7rem;
+  }
+  /* .logo {
+    display: block;
+    width: 6.5rem;
+    height: 6.5rem;
+  } */
+  h1 {
+    margin-top: 2rem;
+    font-size: 2.4em;
+  }
+  .app-sub-header {
+    font-size: 2em;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .slider-container {
+    height: 100vh;
+  }
+
+  .hero-img {
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .app-sub-header {
+    position: fixed;
+    z-index: 1;
+    font-size: 2.4em;
+    top: 38%;
+    left: 50%;
+    animation: fadein 4s;
+    transform: translate(-50%, -50%);
+  }
+
+  nav a {
+    font-size: 1.6em;
+  }
+
+  /* make icons fade in 1 by 1 like the header?*/
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

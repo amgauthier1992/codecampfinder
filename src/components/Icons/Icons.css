@@ -1,0 +1,103 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.tech-icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tech-img {
+  height: 4rem;
+  width: 4rem;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding: 0 0.3rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 25%;
+  max-width: 25%;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .tech-img {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .tech-img {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .tech-icons {
+    position: fixed;
+    z-index: 0;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  img.html {
+    animation: fadein 5s backwards;
+    animation-delay: 0.5s;
+  }
+  img.css {
+    animation: fadein 5s backwards;
+    animation-delay: 1s;
+  }
+  img.js {
+    animation: fadein 5s backwards;
+    animation-delay: 1.5s;
+  }
+  img.py {
+    animation: fadein 5s backwards;
+    animation-delay: 2s;
+  }
+  img.cSharp {
+    animation: fadein 5s backwards;
+    animation-delay: 2.5s;
+  }
+  img.ruby {
+    animation: fadein 5s backwards;
+    animation-delay: 3s;
+  }
+  img.java {
+    animation: fadein 5s backwards;
+    animation-delay: 3.5s;
+  }
+  img.swift {
+    animation: fadein 5s backwards;
+    animation-delay: 4s;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

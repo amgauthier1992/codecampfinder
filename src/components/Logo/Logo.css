@@ -1,0 +1,30 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+.logo {
+  display: block;
+  height: 4.688rem;
+  width: 4.688rem;
+}
+
+/* --- [ S- Landscape phones > 576 ] --- */
+@media only screen and (min-width: 568px) {
+  .logo {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .logo {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

@@ -1,0 +1,24 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+.course-detail-container {
+  display: flex;
+  background-image: url("../../img/header-background.png");
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

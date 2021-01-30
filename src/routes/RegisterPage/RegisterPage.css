@@ -1,0 +1,60 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.registration-wrapper {
+  display: flex;
+  background-image: url("../../img/header-background.png");
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.home-link {
+  width: 4.688rem;
+  height: 4.688rem;
+}
+
+.absolute {
+  display: absolute;
+  top: 0;
+  left: 0;
+}
+
+.registration-h2 {
+  text-align: center;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .registration-h2 {
+    margin-top: -1em;
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .registration-h2 {
+    font-size: 2em;
+    margin-top: 0;
+    text-align: center;
+  }
+  .home-link {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .registration-h2 {
+    font-size: 2.8em;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+  .registration-h2 {
+    font-size: 3em;
+  }
+}

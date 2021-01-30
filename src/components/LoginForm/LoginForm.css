@@ -1,0 +1,114 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+#login-form {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13rem;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login-header {
+  left: 0;
+  right: 0;
+  transform: translate(-15%, -15%);
+  color: #0f0f0ff3;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login-btn {
+  width: 6rem;
+  height: 2rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.redirect-register {
+  display: block;
+  text-align: center;
+  margin-top: 1.3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label#user_name-label,
+label#password-label {
+  font-size: 1em;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  #login-header {
+    font-size: 2.4em;
+    transform: translate(-20%, -15%);
+  }
+
+  label#user_name-label,
+  label#password-label {
+    font-size: 1.4em;
+  }
+
+  .redirect-register {
+    font-size: 1.2em;
+  }
+
+  .login-input {
+    height: 1.8rem;
+    font-size: 1.125em;
+  }
+
+  #login-btn {
+    font-size: 1.1em;
+    height: 3rem;
+    padding: 6px;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  label#user_name-label,
+  label#password-label {
+    font-size: 1.6em;
+  }
+  .login-input {
+    height: 2.2rem;
+    font-size: 1.3em;
+  }
+  .redirect-register {
+    font-size: 1.6em;
+  }
+  #login-btn {
+    font-size: 1.1em;
+  }
+  #login-header {
+    transform: translate(-22%, -20%);
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  #login-header {
+    transform: translate(-26%, -20%);
+    font-size: 2.8rem;
+  }
+  .login-input {
+    height: 2.2rem;
+    font-size: 1.3em;
+  }
+  label#user_name-label,
+  label#password-label {
+    font-size: 1.8em;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

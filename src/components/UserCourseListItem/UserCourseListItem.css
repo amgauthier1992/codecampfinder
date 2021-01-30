@@ -1,0 +1,98 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.course-list-item {
+  background-color: rgba(247, 245, 245, 0.384);
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+}
+
+.course-list-item-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  height: 100%;
+}
+
+.course-name,
+.bootcamp-name {
+  margin-left: 0.4rem;
+}
+
+.course-detail-btn,
+.course-delete-btn {
+  margin-left: 0.8rem;
+}
+
+.course-detail-btn {
+  width: 4rem;
+  padding: 6px;
+  font-size: 0.9em;
+  border-radius: 8px;
+}
+
+.course-delete-btn {
+  padding: 6px;
+  width: 2.75rem;
+  font-size: 0.9em;
+  border-radius: 8px;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .course-list-item {
+    width: 75%;
+  }
+
+  .course-detail-btn {
+    font-size: 1em;
+    padding: 8px;
+  }
+
+  .course-delete-btn {
+    font-size: 1em;
+    padding: 8px;
+    width: 3rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .course-detail-btn {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+
+  .course-delete-btn {
+    font-size: 1.1em;
+    padding: 10px;
+    width: 3.25rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+  .course-list-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .course-list-item {
+    width: 48%;
+  }
+  .course-list-item-controls {
+    height: 3rem;
+  }
+}

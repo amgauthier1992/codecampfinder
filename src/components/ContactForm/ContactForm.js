@@ -1,6 +1,6 @@
-import React from 'react'
-import Validator from '../Validator/Validator'
-import config from '../../config'
+import React from 'react';
+import Validator from '../Validator/Validator';
+import config from '../../config';
 import './ContactForm.css';
 
 class ContactForm extends React.Component {
@@ -50,8 +50,8 @@ class ContactForm extends React.Component {
 
   validateName = () => {
     const name = this.state.name.value;
-    if (name.trim() == "") {
-      return "Please provide your name";
+    if (name.trim() == '') {
+      return 'Please provide your name';
     }
   }
   
@@ -59,21 +59,21 @@ class ContactForm extends React.Component {
     const emailAddress = this.state.emailAddress.value;
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!emailAddress.match(regexEmail)) {
-      return "Please use a valid email"; 
+      return 'Please use a valid email'; 
     }
   }
 
   validateSubject = () => {
     const subject = this.state.subject.value;
-    if (subject.trim() == "") {
-      return "Subject is required";
+    if (subject.trim() == '') {
+      return 'Subject is required';
     }
   }
 
   validateMsg = () => {
     const message = this.state.message.value;
-    if (message.trim() == "") {
-      return "Message is required";
+    if (message.trim() == '') {
+      return 'Message is required';
     }
   }
 
@@ -100,7 +100,6 @@ class ContactForm extends React.Component {
       body: JSON.stringify(email),
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`
       }
     })
       .then(res => {
@@ -126,69 +125,72 @@ class ContactForm extends React.Component {
 
   render(){
     return (
-      <form id="contact-form" onSubmit={(e) => this.submitEmail(e)}>
-        <label id="name" htmlFor="name" className="contact-label">Name</label>
+      <form id='contact-form' onSubmit={(e) => this.submitEmail(e)}>
+        <label id='name' htmlFor='name' className='contact-label'>Name</label>
         <input
-          id="name"
-          className="contact-input"
-          name="name"
-          type="text"
+          id='name'
+          className='contact-input'
+          name='name'
+          type='text'
+          placeholder='John Doe'
           onChange={(e) => this.onNameChange(e.target.value)}
           required
         />
         {this.state.name.touched && (
           <Validator message={this.validateName()} />
         )}
-        <label id="email" htmlFor="email" className="contact-label">Email</label>
+        <label id='email' htmlFor='email' className='contact-label'>Email</label>
         <input
-          id="email"
-          className="contact-input"
-          aria-describedby="emailHelp"
-          name="email"
-          type="email"
+          id='email'
+          className='contact-input'
+          aria-describedby='emailHelp'
+          name='email'
+          type='email'
+          placeholder='jdoe@gmail.com'
           onChange={(e) => this.onEmailAddressChange(e.target.value)}
           required
         />
         {this.state.emailAddress.touched && (
           <Validator message={this.validateEmailAddress()} />
         )}
-        <label id="subject" htmlFor="subject" className="contact-label">Subject</label>
+        <label id='subject' htmlFor='subject' className='contact-label'>Subject</label>
         <input
-          id="subject"
-          className="contact-input"
-          name="subject"
-          type="text"
+          id='subject'
+          className='contact-input'
+          name='subject'
+          type='text'
+          placeholder='Subject'
           onChange={(e) => this.onSubjectChange(e.target.value)}
           required
         />
         {this.state.subject.touched && (
           <Validator message={this.validateSubject()} />
         )}
-        <label id="message" htmlFor="message" className="contact-label">Message</label>
+        <label id='message' htmlFor='message' className='contact-label'>Message</label>
         <textarea
-          id="message"
-          className="contact-input"
-          placeholder="Message"
-          name="message"
-          rows="7"
-          cols="55"
+          id='message'
+          className='contact-input'
+          placeholder='Message'
+          name='message'
+          rows='7'
+          cols='55'
           onChange={(e) => this.onMsgChange(e.target.value)}
           required
         />
         {this.state.message.touched && (
           <Validator message={this.validateMsg()} />
         )}
-        <div className="contact-btn-controls">
+        <div className='contact-btn-controls'>
           <button
-            className="contact-reset"
-            type="reset"
+            className='contact-reset'
+            type='reset'
             onClick={() => this.resetForm()}
           >
             Reset
           </button>
           <button 
-            className="contact-submit"
-            type="submit"
+            className='contact-submit'
+            type='submit'
             // disabled={(this.validateName(), this.validateSubject(), this.validateMsg())}
           >
             Submit

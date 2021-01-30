@@ -1,34 +1,45 @@
 import React from 'react';
-import AuthContext from '../../contexts/AuthContext'
-import AuthApiService from '../../services/auth-api-service'
-import { withAppContext } from '../../contexts/AppContext';
+import config from '../../config';
+import { Link } from 'react-router-dom';
 import Validator from '../Validator/Validator';
+// import Spinner from '../Spinner/Spinner';
+import './RegistrationForm.css';
 
 class RegistrationForm extends React.Component {
-  static contextType = AuthContext
 
   state = {
     user_name: {
       value: '',
       touched: false,
+      valid: null,
+      message: ''
     },
     password: {
       value: '',
       touched: false,
+      valid: null,
+      message: ''
     },
     repeatPassword: {
       value: '',
       touched: false,
+      valid: null,
+      message: ''
     },
     first_name: {
       value: '',
       touched: false,
+      valid: null,
+      message: ''
     },
     last_name: {
       value: '',
       touched: false,
+      valid: null,
+      message: ''
     },
-    error: null
+    error: null,
+    // spinner: null,
   }
 
   onUsernameChange = (user_name) => {
@@ -42,7 +53,7 @@ class RegistrationForm extends React.Component {
       password: { value: password, touched: true }
     })
   }
-
+  
   onRepeatPasswordChange = (repeatPassword) => {
     this.setState({
       repeatPassword: { value: repeatPassword, touched: true }
@@ -61,170 +72,258 @@ class RegistrationForm extends React.Component {
     })
   }
 
-  validateUsername = () => {
-    const user_name = this.state.user_name.value;
-    if (user_name.trim() == "") {
-      return "Please create a username";
+  //Take in a string value and return T/F if I have a value.
+  haveDataFor = (value) => {
+    if(value == null || typeof(value) == undefined || value === undefined || value == ''){
+      return false;
     }
-    else if (user_name.startsWith(' ') || user_name.endsWith(' ')) {
-      return "Username cannot start or end with empty spaces"
-    }
-  }
-  
-  //add a legend for password requirements? so that the user knows them upon getting to registration section. 
-  validatePassword = () => {
-    const password = this.state.password.value;
-    if (password.trim() == "") {
-      return "Please create a password"
-    }
-    else if (password.startsWith(' ') || password.endsWith(' ')) {
-      return "Password cannot start or end with empty spaces"
-    }
-    else if (!password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{8,}$/)) {
-      return "Password must contain at least 8 characters including: at least 1 number, 1 lowercase letter, 1 uppercase letter and 1 special character"
-    }
-  }
-
-  validateRepeatPassword = () => {
-    const password = this.state.password.value;
-    const repeatPassword = this.state.repeatPassword.value;
-    if (repeatPassword !== password) {
-      return "The password and confirmation password must match";
-    }
+    return true;
   }
 
   validateFirstName = () => {
-    const first_name = this.state.first_name.value;
-    if (first_name.trim() == "") {
-      return "Please supply your first name";
+    const first_name = this.state.first_name?.value?.trim();
+
+    if(this.haveDataFor(first_name) && first_name.indexOf(' ') > -1){
+      this.setState({ first_name: { value: first_name, valid: false, message: 'No spaces' } });
+      return false;
     }
-    else if (first_name.startsWith(' ') || first_name.endsWith(' ')) {
-      return "First name cannot start or end with empty spaces"
+
+    if(!this.haveDataFor(first_name)){
+      this.setState({ first_name: { value: first_name, valid: false, message: 'Please supply your first name' } });
+      return false;
     }
+    
+    this.setState({ first_name: { value: first_name.trim(), valid: true , message: '' } });
+    return true;
   }
 
   validateLastName = () => {
-    const last_name = this.state.last_name.value;
-    if (last_name.trim() == "") {
-      return "Please supply your last name";
+    const last_name = this.state.last_name?.value?.trim();
+
+    if (!this.haveDataFor(last_name)) {
+      this.setState({ last_name: { value: last_name, valid: false, message: 'Please supply your last name' } })
+      return false;
     }
-    else if (last_name.startsWith(' ') || last_name.endsWith(' ')) {
-      return "Last name cannot start or end with empty spaces"
-    }
+   
+    this.setState({ last_name: { value: last_name.trim(), valid: true, message: '' } })
+    return true;
   }
 
-  resetForm = () => {
-    console.log(`resetForm ran!`)
+  validateUsername = () => {
+    const user_name = this.state.user_name?.value?.trim();
+
+    if (!this.haveDataFor(user_name)) {
+      this.setState({ user_name: { value: user_name, valid: false, message: 'Please create a username' } })
+      return false;
+    }
+    
+    this.setState({ user_name: { value: user_name.trim(), valid: true, message: '' } })
+    return true;
+  }
+
+  validatePassword = () => {
+    const password = this.state.password?.value?.trim();
+    const isPasswordValid = password?.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{8,}$/);
+
+    if(!this.haveDataFor(password)){
+      this.setState({ password: { value: password, valid: false, message: 'Please create a password' } })
+      return false;
+    }
+
+    if(!isPasswordValid){
+      this.setState({ password: { value: password, valid: false, message: 'Password must contain at least 8 characters including: at least 1 number, 1 lowercase letter, 1 uppercase letter and 1 special character' } })
+      return false;
+    }
+    
+    this.setState({ password: { value: password.trim(), valid: true, message: ''} })
+    return true;
+  }
+
+  validateRepeatPassword = () => {
+    const password = this.state.password?.value?.trim();
+    const repeatPassword = this.state.repeatPassword?.value?.trim();
+    const passwordsMatch = password == repeatPassword;
+
+    if(!this.haveDataFor(password) || !this.haveDataFor(repeatPassword)){
+      this.setState({ repeatPassword: { value: repeatPassword, valid: false , message: 'Must enter a matching password and confirmation password' } })
+      return false;
+    }
+
+    if(!passwordsMatch){
+      this.setState({ repeatPassword: { value: repeatPassword, valid: false , message: 'The password and confirmation password must match' } })
+      return false;
+    }
+
+    this.setState({ repeatPassword: { value: repeatPassword, valid: true , message: '' } })
+    return true;
+  }
+
+  validateInputs = () => {
+
+    const isFirstNameValid = this.validateFirstName();
+    const isLastNameValid = this.validateLastName();
+    const isUsernameValid = this.validateUsername();
+    const isPasswordValid = this.validatePassword();
+    const isRepeatPasswordValid = this.validateRepeatPassword();
+    
+    if(!isFirstNameValid || !isLastNameValid || !isUsernameValid || !isPasswordValid || !isRepeatPasswordValid){
+      return false;
+    }
+
+    return true;
+  }
+
+  hideValidator = () => {
+    const { user_name, password, first_name, last_name, repeatPassword } = this.state
+    
     this.setState({
-      user_name: { value: '', touched: false },
-      password: { value: '', touched: false },
-      repeatPassword: { value: '', touched: false },
-      first_name: { value: '', touched: false },
-      last_name: { value: '', touched: false }
+      user_name: { value: user_name.value, valid: user_name.valid, message: '' }, 
+      password: { value: password.value, valid: password.valid, message: '' },
+      repeatPassword: { value: repeatPassword.value, valid: repeatPassword.valid, message: '' },
+      first_name: { value: first_name.value, valid: first_name.valid, message: '' },
+      last_name: { value: last_name.value, valid: last_name.valid, message: '' },
+      error: null
     })
   }
 
-  handleRegistration = async (e) => {
-    e.preventDefault();
-    this.setState({ error: null })
-    const { first_name, last_name, user_name, password } = this.state
-    const newUser = { first_name, last_name, user_name, password }
-    const { setLoading } = this.props.appContext
+  resetForm = () => {
+    document.getElementById('first_name').value=''
+    document.getElementById('last_name').value=''
+    document.getElementById('user_name').value=''
+    document.getElementById('password').value=''
+    document.getElementById('repeatPassword').value=''
+    this.setState({
+      user_name: { value: '', touched: false, valid: null, message: '' },
+      password: { value: '', touched: false, valid: null, message: '' },
+      repeatPassword: { value: '', touched: false, valid: null, message: '' },
+      first_name: { value: '', touched: false, valid: null, message: '' },
+      last_name: { value: '', touched: false, valid: null, message: '' },
+      error: null,
+      // spinner: false
+    })
+  }
 
-    try {
-      setLoading(true)
-      const savedUser = await AuthApiService.createUser(newUser)
-      this.context.login(savedUser.authToken)
-      delete savedUser.authToken
-      this.context.setCurrentUser(savedUser)
-      setLoading(true)
-      // this should load /dashboard
-    } catch(err) {
-      this.setState({ error: err.message }, setLoading(false))
+  handleRegistration = (e) => {
+    e.preventDefault();
+    const { first_name, last_name, user_name, password } = this.state;
+    const newUser = { first_name: first_name.value, last_name: last_name.value, user_name: user_name.value, password: password.value };
+
+    if (this.validateInputs()){
+
+      fetch(`${config.API_ENDPOINT}/users/register`, {
+        method: 'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+          'content-type': 'application/json',
+        }
+      })
+        .then(res => {
+          if(!res.ok) {
+            throw new Error('Registration failed. Please try again later.');
+          }
+          return res.json()
+        })
+        .then(success => {
+          // this.setState({
+          //   spinner: false,
+          // })
+          this.props.history.push('/login')
+        })
+        .catch((err) => {
+          this.setState({
+            error: err.message,
+            // spinner: false,
+          })
+        })
     }
   }
 
   render(){
+    // let spinner;
+
+    let validator;
+
+    let errorMessage = this.state.first_name.message || this.state.last_name.message || this.state.user_name.message || this.state.password.message || this.state.repeatPassword.message;
+
+    if (errorMessage){
+      validator = <Validator hideValidator={this.hideValidator} message={errorMessage} cssClass={'invalid'}/>
+    }
+
+    // if(this.state.spinner){
+    //   spinner = <Spinner/>
+    // }
+
     return (
-      <form id="registration-form" onSubmit={(e) => this.handleRegistration(e)}>
-        <label id="first_name" htmlFor="first_name" className="registration-label">First Name</label>
+      <form id='registration-form' onSubmit={(e) => this.handleRegistration(e)}>
+        <h2 className='registration-h2'>Register</h2>
+        <label id='first_name_label' htmlFor='first_name' className='registration-label'>First Name</label>
         <input
-          id="first_name"
-          className="registration-input"
-          name="first_name"
-          type="text"
+          id='first_name'
+          className='registration-input'
+          name='first_name'
+          type='text'
           onChange={(e) => this.onFirstNameChange(e.target.value)}
           required
         />
-        {this.state.first_name.touched && (
-        <Validator message={this.validateFirstName()} />
-        )}
-        <label id="last_name" htmlFor="last_name" className="registration-label">Last Name</label>
+        <label id='last_name_label' htmlFor='last_name' className='registration-label'>Last Name</label>
         <input
-          id="last_name"
-          className="registration-input"
-          name="last_name"
-          type="text"
+          id='last_name'
+          className='registration-input'
+          name='last_name'
+          type='text'
           onChange={(e) => this.onLastNameChange(e.target.value)}
           required
         />
-        {this.state.last_name.touched && (
-        <Validator message={this.validateLastName()} />
-        )}
-        <label id="user_name" htmlFor="user_name" className="registration-label">Username</label>
+        <label id='user_name_label' htmlFor='user_name' className='registration-label'>Username</label>
         <input
-          id="user_name"
-          className="registration-input"
-          name="user_name"
-          type="text"
+          id='user_name'
+          className='registration-input'
+          name='user_name'
+          type='text'
           onChange={(e) => this.onUsernameChange(e.target.value)}
           required
         />
-        {this.state.user_name.touched && (
-        <Validator message={this.validateUsername()} />
-        )}
-        <label id="password" htmlFor="password" className="registration-label">Password</label>
+        <label id='password_label' htmlFor='password' className='registration-label'>Password</label>
         <input
-          id="password"
-          type="password"
-          className="registration-input"
-          name="password"
+          id='password'
+          type='password'
+          className='registration-input'
+          name='password'
           onChange={(e) => this.onPasswordChange(e.target.value)}
           required
         />
-        {this.state.password.touched && (
-        <Validator message={this.validatePassword()} />
-        )}
-        <label id="repeatPassword" htmlFor="repeatPassword" className="registration-label">Confirm Password</label>
+        <label id='repeatPassword_label' htmlFor='repeatPassword' className='registration-label'>Confirm Password</label>
         <input
-          id="repeatPassword"
-          type="password"
-          className="registration-input"
-          name="repeatPassword"
+          id='repeatPassword'
+          type='password'
+          className='registration-input'
+          name='repeatPassword'
           onChange={(e) => this.onRepeatPasswordChange(e.target.value)}
           required
         />
-        {this.state.repeatPassword.touched && (
-        <Validator message={this.validateRepeatPassword()} />
-        )}
-        <div className="registration-btn-controls">
+        <div className='registration-btn-controls'>
           <button
-            className="registration-reset"
-            type="reset"
+            className='registration-reset'
+            type='reset'
             onClick={() => this.resetForm()}
           >
             Reset
           </button>
           <button 
-            className="registration-submit"
-            type="submit"
+            className='registration-submit'
+            type='submit'
           >
             Submit
           </button>
         </div>
+        <Link to='/login'>
+          <span className='redirect-login'>Already have an account?</span>
+        </Link>
+        {/* {spinner} */}
+        {validator}
       </form>
     )
   }
 }
 
-export default withAppContext(RegistrationForm);
+export default RegistrationForm;

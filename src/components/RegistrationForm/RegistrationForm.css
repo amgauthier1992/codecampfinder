@@ -1,0 +1,101 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+#registration-form {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.redirect-login {
+  display: block;
+  text-align: center;
+  margin-top: 0.3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration-btn-controls {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration-reset,
+.registration-submit {
+  padding: 4px;
+  width: 5rem;
+  margin-top: 0;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .registration-label {
+    font-size: 1.4em;
+  }
+  .registration-input {
+    height: 1.8rem;
+    font-size: 1.4em;
+  }
+  .redirect-login {
+    margin-top: 1rem;
+    font-size: 1.3em;
+  }
+  .registration-reset,
+  .registration-submit {
+    padding: 10px;
+    width: 5rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .registration-label {
+    font-size: 1.4em;
+  }
+
+  .registration-input {
+    height: 1.7rem;
+    font-size: 1.4em;
+  }
+
+  .registration-reset,
+  .registration-submit {
+    padding: 10px;
+    width: 5rem;
+  }
+
+  .redirect-login {
+    margin-top: 1rem;
+    font-size: 1.5em;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  #registration-form {
+    width: 19rem;
+  }
+  .registration-label {
+    font-size: 1.6em;
+  }
+  .registration-input {
+    height: 2.2rem;
+  }
+
+  .registration-reset,
+  .registration-submit {
+    font-size: 1.2rem;
+    padding: 12px;
+    width: 7rem;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

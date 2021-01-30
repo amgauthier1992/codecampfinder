@@ -1,0 +1,62 @@
+/*>>>>>>>>>>>>>>>>>>>> smallest size: iPhone 5 <<<<<<<<<<<<<<<<<<<<*/
+
+/* .contact-container {
+  background: url("../../img/header-background.png");
+  height: 100vh;
+} */
+
+.contact-container {
+  background: url("../../img/header-background.png");
+  position: fixed;
+  height: 100%;
+  /* background: url("./img/1.png"); */
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-home-btn {
+  display: flex;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 14px;
+}
+
+.contact-title {
+  color: rgba(0, 0, 0, 0.801);
+  margin-top: 50px;
+}
+
+.contact-submit,
+.contact-reset {
+  width: 25%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.error {
+  color: red;
+}
+
+label#name {
+  display: flex;
+  margin-top: 5px;
+}
+
+label#email,
+label#subject,
+label#message {
+  display: flex;
+}
+
+textarea#message {
+  width: 100%;
+}

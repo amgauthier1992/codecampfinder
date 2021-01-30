@@ -1,0 +1,168 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+#search-form {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input#states-input {
+  width: 3.3rem;
+  padding: 4px;
+  margin-top: 0.2rem;
+  margin-left: 0.4rem;
+}
+
+.form-wrapper {
+  margin-top: 0.8rem;
+}
+
+datalist,
+select {
+  width: 4rem;
+  padding: 4px;
+  margin-left: 0.4rem;
+}
+
+select#schedules {
+  width: 5.5rem;
+}
+
+.search-form-controls {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+#search-submit {
+  width: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 8px;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  #search-form {
+    width: 24rem;
+  }
+  .form-wrapper {
+    margin-top: 1.5rem;
+  }
+  .search-label {
+    font-size: 1.2em;
+  }
+  input#states-input {
+    font-size: 1em;
+    height: 2.2rem;
+    width: 4.8rem;
+  }
+  select {
+    margin-top: 0.2rem;
+    font-size: 1em;
+    height: 2.2rem;
+    width: 4.8rem;
+  }
+  select#schedules {
+    width: 6.5rem;
+  }
+  #search-submit {
+    font-size: 1em;
+    padding: 8px;
+    width: 6.2rem;
+    height: 2.8rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .form-wrapper {
+    margin-top: 1.5rem;
+  }
+  #search-form {
+    width: 30rem;
+  }
+  .search-label {
+    font-size: 1.4em;
+  }
+  input#states-input {
+    font-size: 1.2em;
+    height: 2.5rem;
+    width: 5rem;
+  }
+  select {
+    margin-top: 0.2rem;
+    font-size: 1.2em;
+    height: 2.5rem;
+    width: 5rem;
+  }
+  select#schedules {
+    width: 6.8rem;
+  }
+  #search-submit {
+    font-size: 1.2em;
+    padding: 8px;
+    width: 6.5rem;
+    height: 3rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .search-label {
+    font-size: 1.4em;
+  }
+  input#states-input {
+    font-size: 1.2em;
+    height: 2.5rem;
+    width: 5rem;
+  }
+  select {
+    margin-top: 0.2rem;
+    font-size: 1.2em;
+    height: 2.5rem;
+    width: 5rem;
+  }
+  select#schedules {
+    width: 6.8rem;
+  }
+  #search-submit {
+    font-size: 1.2em;
+    padding: 8px;
+    width: 6.5rem;
+    height: 3rem;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+  /* #search-form {
+    width: 25rem;
+  }
+  .search-label {
+    font-size: 1.4em;
+  }
+  input#states-input {
+    font-size: 1.2em;
+    height: 2.5rem;
+    width: 5rem;
+  }
+  select {
+    margin-top: 0.2rem;
+    font-size: 1.2em;
+    height: 2.5rem;
+    width: 5rem;
+  }
+  select#schedules {
+    width: 6.8rem;
+  }
+  #search-submit {
+    font-size: 1.2em;
+    padding: 8px;
+    width: 6.5rem;
+    height: 3rem;
+  } */
+}

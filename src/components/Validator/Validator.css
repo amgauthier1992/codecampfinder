@@ -1,3 +1,57 @@
-.form-validation-error {
-  color: red;
+/* --- [ S- Landscape phones > 568 ] --- */
+
+.form-validation-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-50%, -50%);
+  font-size: 1.3em;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.invalid {
+  color: #721c24;
+  background-color: #e0949ace;
+  border-color: #f5c6cb;
+}
+
+.green {
+  color: darkgreen;
+  background-color: lightgreen;
+  border-color: rgb(178, 224, 180);
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .form-validation-message {
+    font-size: 1.6em;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .form-validation-message {
+    font-size: 1.8em;
+    width: 600px;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .form-validation-message {
+    font-size: 2em;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+  .form-validation-message {
+    font-size: 2.2em;
+  }
 }

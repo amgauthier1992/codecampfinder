@@ -1,0 +1,38 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+nav a {
+  height: 2rem;
+  margin-top: 1.8rem;
+  margin-right: 1.5rem;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* --- [ S- Landscape phones > 576 ] --- */
+@media only screen and (min-width: 568px) {
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  nav a {
+    font-size: 1.3em;
+    margin-top: 2.5rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

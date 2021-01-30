@@ -1,0 +1,65 @@
+.null-wrapper {
+  display: flex;
+  background-image: url("../../img/header-background.png");
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.null-results-msg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+}
+
+.search-return-btn {
+  margin-top: 2rem;
+  width: 5rem;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .null-results-msg {
+    font-size: 1.8em;
+  }
+
+  .search-return-btn {
+    font-size: 1.2em;
+    margin-top: 2rem;
+    width: 8rem;
+    height: 3rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .null-results-msg {
+    font-size: 2.2em;
+  }
+
+  .search-return-btn {
+    margin-top: 2rem;
+    width: 8rem;
+    height: 4rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .null-results-msg {
+    font-size: 2.4em;
+  }
+
+  .search-return-btn {
+    margin-top: 2rem;
+    width: 8rem;
+    height: 5rem;
+  }
+}
+
+/* --- [ XL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

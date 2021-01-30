@@ -1,0 +1,97 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.result-item {
+  border: 0.15rem solid white;
+  margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
+  width: 100%;
+}
+
+.item-header {
+  margin-left: 0.5rem;
+  font-size: 1.45rem;
+}
+
+.item-website {
+  display: block;
+  width: 5rem;
+  font-size: 1em;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.item-location {
+  font-size: 1em;
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+}
+
+.offerings-header {
+  font-size: 1.35em;
+  text-align: center;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .item-header {
+    font-size: 1.6rem;
+  }
+
+  .item-website {
+    font-size: 1.25em;
+  }
+
+  .item-location {
+    font-size: 1.25em;
+  }
+
+  .offerings-header {
+    font-size: 1.5em;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .item-header {
+    font-size: 1.8rem;
+  }
+
+  .item-website {
+    font-size: 1.35em;
+  }
+
+  .item-location {
+    font-size: 1.35em;
+  }
+
+  .offerings-header {
+    font-size: 1.7em;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .item-header {
+    font-size: 2rem;
+  }
+
+  .item-website {
+    font-size: 1.45em;
+  }
+
+  .item-location {
+    font-size: 1.45em;
+  }
+
+  .offerings-header {
+    font-size: 1.85em;
+  }
+}
+
+/* --- [ XL- larger desktops ] --- */
+@media only screen and (min-width: 1024px) {
+}
+
+/* --- [ XXL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+}

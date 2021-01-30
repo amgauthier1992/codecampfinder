@@ -1,0 +1,272 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.detail-header {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.detail-table-top {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-left {
+  font-size: 1em;
+  text-align: left;
+}
+
+.detail-right {
+  text-align: center;
+  font-size: 1em;
+}
+
+.detail-center {
+  font-size: 1em;
+  text-align: center;
+}
+
+.detail-languages-wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-payment-wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-languages-header,
+.detail-payment-header {
+  font-size: 1.2em;
+}
+
+.detail-payment-header {
+  text-align: center;
+}
+
+.detail-language-li {
+  font-size: 1em;
+}
+
+.redirect-dashboard-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 4px;
+  height: 2rem;
+  width: 5rem;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .detail-table-top {
+    width: 50%;
+  }
+
+  .detail-header {
+    font-size: 1.6em;
+  }
+
+  .detail-left {
+    font-size: 1.25em;
+  }
+
+  .detail-right {
+    font-size: 1.25em;
+  }
+
+  .detail-center {
+    font-size: 1.25em;
+  }
+
+  .detail-languages-header,
+  .detail-payment-header {
+    font-size: 1.4em;
+  }
+
+  .detail-language-li {
+    font-size: 1.25em;
+  }
+
+  .redirect-dashboard-btn {
+    height: 3rem;
+    width: 5.5rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .detail-table-top {
+    width: 50%;
+  }
+
+  .detail-header {
+    font-size: 1.7em;
+  }
+
+  .detail-left {
+    font-size: 1.4em;
+  }
+
+  .detail-right {
+    font-size: 1.4em;
+  }
+
+  .detail-center {
+    font-size: 1.4em;
+  }
+
+  .detail-languages-header,
+  .detail-payment-header {
+    font-size: 1.55em;
+  }
+
+  .detail-language-li {
+    font-size: 1.4em;
+  }
+
+  .redirect-dashboard-btn {
+    font-size: 1.2em;
+    height: 3.5rem;
+    width: 6rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .detail-table-top {
+    width: 45%;
+  }
+  .detail-header {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .detail-left {
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  .detail-right {
+    font-size: 1.5em;
+  }
+
+  .detail-center {
+    font-size: 1.5em;
+  }
+
+  .detail-languages-header,
+  .detail-payment-header {
+    font-size: 1.65em;
+  }
+
+  .detail-language-li {
+    font-size: 1.5em;
+  }
+
+  .redirect-dashboard-btn {
+    font-size: 1.25em;
+    height: 4rem;
+    width: 6.5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .detail-table-top {
+    width: 40%;
+  }
+
+  .detail-header {
+    font-size: 1.9em;
+  }
+
+  .detail-left {
+    font-size: 1.6em;
+  }
+
+  .detail-right {
+    font-size: 1.6em;
+  }
+
+  .detail-center {
+    font-size: 1.6em;
+  }
+
+  .detail-languages-header,
+  .detail-payment-header {
+    font-size: 1.7em;
+  }
+
+  .detail-language-li {
+    font-size: 1.5em;
+  }
+
+  .redirect-dashboard-btn {
+    font-size: 1.3em;
+    height: 4.5rem;
+    width: 8rem;
+  }
+}
+
+/* --- [ XXL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+  .detail-table-top {
+    width: 35%;
+  }
+
+  .detail-header {
+    font-size: 2em;
+  }
+
+  .detail-left {
+    font-size: 1.7em;
+  }
+
+  .detail-right {
+    font-size: 1.7em;
+  }
+
+  .detail-center {
+    font-size: 1.7em;
+  }
+
+  .detail-languages-header,
+  .detail-payment-header {
+    font-size: 1.8em;
+  }
+
+  .detail-language-li {
+    font-size: 1.7em;
+  }
+
+  .redirect-dashboard-btn {
+    font-size: 1.3em;
+  }
+}
+
+/* --- [ XXXL- largest desktops ] --- */
+@media only screen and (min-width: 1400px) {
+  .detail-table-top {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .detail-table-top {
+    width: 25%;
+  }
+}

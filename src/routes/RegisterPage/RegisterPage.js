@@ -1,25 +1,17 @@
 import React from 'react';
-import Logo from "../../components/Logo/Logo";
-import { Link } from "react-router-dom";
+import Logo from '../../components/Logo/Logo';
+import { Link } from 'react-router-dom';
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
+import './RegisterPage.css';
 
-export default function RegisterPage() {
+export default function RegisterPage(props) {
   return (
-    <div className="registration-container">
-      <div className="registration-top">
-        <Logo />
-        <Link to="/">
-          <button className="registration-home-btn" type="button">Home
-            <i className="fas fa-home"></i>
-          </button>
-        </Link>
-        <h2 className="registration-title">Sign up</h2>
-        <Link to="/login">
-          Already have an account?
-        </Link>
-        <hr/>
-      </div>
-      <RegistrationForm />
+    <div className='registration-wrapper'>
+      <Link className='home-link' to='/'>
+        <Logo style={'absolute'}/>
+      </Link>
+      <RegistrationForm history={props.history}/>
     </div>
   )
 }
+

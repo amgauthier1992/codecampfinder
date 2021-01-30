@@ -1,7 +1,23 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import './ImageSlider.css';
 
 const ImageSlider = ({ images }) => { // takes in images as props
   const [index, setIndex] = useState(0); // create state to keep track of images index, set the default index to 0
+
+  const exampleSetTimeOut = () => {
+    let index = 0;
+    let numImages = images.length;
+    
+    let image = images[index];
+    index++;
+
+    //set image
+    if (index > numImages){
+      index = 0
+    }
+
+    //use setTimeOut to change image
+  }
 
   const slideRight = () => {
     setIndex((index + 1) % images.length); // increases index by 1
@@ -18,13 +34,12 @@ const ImageSlider = ({ images }) => { // takes in images as props
 
   return (
     images.length > 0 && (
-      <div>
-        <img src={images[index]} alt={index} />
-        {/* <button onClick={slideLeft}>{"<"}</button>
-        <button onClick={slideRight}>{">"}</button> */}
-      </div>
+        <img className='hero-img' src={images[index]} alt={index} />
+        // <button onClick={slideLeft}>{'<'}</button>
+        // <button onClick={slideRight}>{'>'}</button>
     )
   );
 };
 
 export default ImageSlider;
+

@@ -1,0 +1,264 @@
+/* --- [ XS- Portrait Phones < 568 ] --- */
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  width: 95%;
+}
+
+.course-header {
+  color: black;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.table-top {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-bottom {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td.left {
+  font-size: 1em;
+  text-align: left;
+}
+
+td.right {
+  font-size: 1em;
+}
+
+td.center {
+  font-size: 1em;
+  text-align: center;
+}
+
+hr {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.languages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.payment-wrapper {
+  margin-left: 0.5rem;
+}
+
+.language-ul {
+  text-align: left;
+  align-self: center;
+  width: 12rem;
+}
+
+.fa-check-circle {
+  color: green;
+}
+
+.far.fa-times-circle {
+  color: red;
+}
+
+.languages-header,
+.payment-header {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.payment-header {
+  margin-top: 0.5rem;
+}
+
+.course-add-btn {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2rem;
+}
+
+/* --- [ S- Landscape phones > 568 ] --- */
+@media only screen and (min-width: 568px) {
+  .course-header {
+    font-size: 1.45em;
+  }
+
+  td.left {
+    font-size: 1.2em;
+  }
+
+  td.right {
+    font-size: 1.2em;
+  }
+
+  td.center {
+    font-size: 1.2em;
+  }
+
+  .language-li {
+    font-size: 1.2em;
+  }
+
+  .language-ul {
+    text-align: left;
+    align-self: center;
+    width: 12rem;
+  }
+
+  .languages-header,
+  .payment-header {
+    font-size: 1.35em;
+  }
+
+  .course-add-btn {
+    font-size: 1em;
+    height: 3rem;
+  }
+}
+
+/* --- [ M- Tablets ] --- */
+@media only screen and (min-width: 768px) {
+  .course-header {
+    font-size: 1.6em;
+  }
+
+  td.left {
+    font-size: 1.3em;
+  }
+
+  td.right {
+    font-size: 1.3em;
+  }
+
+  td.center {
+    font-size: 1.3em;
+  }
+
+  .language-li {
+    font-size: 1.3em;
+  }
+
+  .language-ul {
+    text-align: left;
+    align-self: center;
+    width: 12rem;
+  }
+
+  .languages-header,
+  .payment-header {
+    font-size: 1.45em;
+  }
+
+  .course-add-btn {
+    font-size: 1.1em;
+    height: 3rem;
+  }
+}
+
+/* --- [ L- laptops/desktops ] --- */
+@media only screen and (min-width: 992px) {
+  .course-header {
+    font-size: 1.75em;
+  }
+
+  td.left {
+    font-size: 1.45em;
+  }
+
+  td.right {
+    font-size: 1.45em;
+  }
+
+  td.center {
+    font-size: 1.45em;
+  }
+
+  .language-li {
+    font-size: 1.45em;
+  }
+
+  .language-ul {
+    text-align: left;
+    align-self: center;
+    width: 12rem;
+  }
+
+  .languages-header,
+  .payment-header {
+    font-size: 1.55em;
+  }
+
+  .course-add-btn {
+    font-size: 1.2em;
+    height: 3rem;
+  }
+}
+
+/* --- [ XL- laptops/desktops ] --- */
+@media only screen and (min-width: 1024px) {
+  .course-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .offerings-header {
+    text-align: left;
+    margin-left: 0.5rem;
+  }
+
+  .course-header {
+    display: block;
+    max-width: 500px;
+    text-align: left;
+    margin-left: 0.5rem;
+    margin-top: 0;
+  }
+
+  .payment-header {
+    margin-top: 0;
+  }
+
+  .languages-header {
+    margin-top: 0;
+  }
+
+  .languages-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .course-add-btn {
+    position: absolute;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 10rem;
+    width: 115px;
+    height: 50px;
+  }
+}
+
+/* --- [ XXL- large desktops ] --- */
+@media only screen and (min-width: 1200px) {
+  .table-top {
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+  }
+}
