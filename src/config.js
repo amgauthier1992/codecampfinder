@@ -1,3 +1,4 @@
 export default {
-  API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT
+  API_ENDPOINT: 'https://vast-tundra-62273.herokuapp.com/'
 }
+
