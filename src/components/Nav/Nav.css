@@ -8,12 +8,14 @@ nav {
 }
 
 nav a {
+  color: black;
   height: 2rem;
   margin-top: 1.8rem;
   margin-right: 1.5rem;
 }
 
 nav a:hover {
+  color: white;
   opacity: 1;
 }
 

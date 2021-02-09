@@ -43,7 +43,7 @@ export default function Sidebar(props) {
                 </li>
               );
             })}
-            <li className='nav-text'><div onClick={() => logout()}><HiIcons.HiLogout /><span className='sidebar-span'>Logout</span></div></li>
+            <li className='nav-text'><div className='sidebar-link' tabIndex='0' onClick={() => logout()}><HiIcons.HiLogout /><span className='sidebar-span'>Logout</span></div></li>
           </ul>
         </nav>
       </IconContext.Provider>

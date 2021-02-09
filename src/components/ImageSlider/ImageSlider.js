@@ -3,7 +3,7 @@ import './ImageSlider.css';
 
 const ImageSlider = ({ images }) => { // takes in images as props
   const [index] = useState(0); // create state to keep track of images index, set the default index to 0
-  //include setIndex above inside brackets [index, setIndex]
+  //re-add setIndex above inside brackets [index, setIndex]
 
   // const exampleSetTimeOut = () => {
   //   let index = 0;
