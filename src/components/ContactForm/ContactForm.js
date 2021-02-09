@@ -50,29 +50,29 @@ class ContactForm extends React.Component {
 
   validateName = () => {
     const name = this.state.name.value;
-    if (name.trim() == '') {
+    if (name.trim() === '') {
       return 'Please provide your name';
     }
   }
   
   validateEmailAddress = () => {
     const emailAddress = this.state.emailAddress.value;
-    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!emailAddress.match(regexEmail)) {
-      return 'Please use a valid email'; 
-    }
+    // let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // if (!emailAddress.match(regexEmail)) {
+    //   return 'Please use a valid email'; 
+    // }
   }
 
   validateSubject = () => {
     const subject = this.state.subject.value;
-    if (subject.trim() == '') {
+    if (subject.trim() === '') {
       return 'Subject is required';
     }
   }
 
   validateMsg = () => {
     const message = this.state.message.value;
-    if (message.trim() == '') {
+    if (message.trim() === '') {
       return 'Message is required';
     }
   }

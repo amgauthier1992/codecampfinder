@@ -99,7 +99,7 @@ export default class ResultsList extends React.Component {
               }
 
               //schedule
-              if (c.Schedule.Type == 'full_time'){
+              if (c.Schedule.Type === 'full_time'){
                 ui.ScheduleType = 'Full time'
               } 
 

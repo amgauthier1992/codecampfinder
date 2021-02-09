@@ -15,7 +15,7 @@ class ResultsPage extends React.Component {
   checkSearchResults = () => {
     let searchResults = sessionStorage.getItem('searchResults')
     
-    if(searchResults == null || JSON.parse(searchResults).length == 0){
+    if(searchResults === null || JSON.parse(searchResults).length === 0){
       //if no results push to NotFound
       this.props.history.push('/redirect')
       return;

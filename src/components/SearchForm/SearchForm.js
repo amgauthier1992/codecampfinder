@@ -45,7 +45,7 @@ class SearchForm extends React.Component {
   onFinAssistChange = (input) => {
 
     //if true, leave as it is. User needs to only see courses that offer financing
-    if (input == 'true') {
+    if (input === 'true') {
       this.setState({
         fin_assist: Boolean(JSON.parse(input))
       })
@@ -64,7 +64,7 @@ class SearchForm extends React.Component {
       return false;
     }
 
-    if (stateCode.length != 2 || !stateCode.match('^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$')) {
+    if (stateCode.length !== 2 || !stateCode.match('^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$')) {
       this.setState({ message: 'Please enter a valid 2 letter state code' })
       return false;
     } 

@@ -74,7 +74,7 @@ class RegistrationForm extends React.Component {
 
   //Take in a string value and return T/F if I have a value.
   haveDataFor = (value) => {
-    if(value == null || typeof(value) == undefined || value === undefined || value == ''){
+    if(value === null || typeof(value) === undefined || value === undefined || value === ''){
       return false;
     }
     return true;
@@ -142,7 +142,7 @@ class RegistrationForm extends React.Component {
   validateRepeatPassword = () => {
     const password = this.state.password?.value?.trim();
     const repeatPassword = this.state.repeatPassword?.value?.trim();
-    const passwordsMatch = password == repeatPassword;
+    const passwordsMatch = password === repeatPassword;
 
     if(!this.haveDataFor(password) || !this.haveDataFor(repeatPassword)){
       this.setState({ repeatPassword: { value: repeatPassword, valid: false , message: 'Must enter a matching password and confirmation password' } })

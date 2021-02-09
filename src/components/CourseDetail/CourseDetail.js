@@ -10,7 +10,7 @@ class CourseDetail extends React.Component {
   render(){
     const course = this.props.currentCourse;
 
-    if(course.Course == undefined){
+    if(course.Course === undefined){
       return <></>
     }
 
@@ -29,7 +29,7 @@ class CourseDetail extends React.Component {
     }
 
     //schedule
-    if (course.Schedule.type == 'full_time'){
+    if (course.Schedule.type === 'full_time'){
       ui.ScheduleType = 'Full time'
     } 
 

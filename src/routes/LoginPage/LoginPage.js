@@ -8,7 +8,7 @@ export default function LoginPage(){
   return (
     <div className='login-container'>
       <Link to='/'>
-        <Logo style={'absolute'}/>
+        <Logo extraClass={'absolute'}/>
       </Link>
       <LoginForm />
       <div className='sliding-background'></div>
