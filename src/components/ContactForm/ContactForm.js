@@ -56,7 +56,7 @@ class ContactForm extends React.Component {
   }
   
   validateEmailAddress = () => {
-    const emailAddress = this.state.emailAddress.value;
+    // const emailAddress = this.state.emailAddress.value;
     // let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     // if (!emailAddress.match(regexEmail)) {
     //   return 'Please use a valid email'; 

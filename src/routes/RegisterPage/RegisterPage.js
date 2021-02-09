@@ -8,7 +8,7 @@ export default function RegisterPage(props) {
   return (
     <div className='registration-wrapper'>
       <Link className='home-link' to='/'>
-        <Logo style={'absolute'}/>
+        <Logo extraClass={'absolute'}/>
       </Link>
       <RegistrationForm history={props.history}/>
     </div>
