@@ -73,7 +73,7 @@ class UserDashboard extends React.Component {
     const { first_name } = this.state
     let listJsx = null
 
-    if(this.state.userCourses === 0){
+    if(this.state.userCourses < 1){
       listJsx = <div className='null-courses'>No courses to display</div>
     }
 
