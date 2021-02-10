@@ -71,6 +71,18 @@
   width: 5rem;
 }
 
+.removal-msg {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: auto;
+}
+
 /* --- [ S- Landscape phones > 568 ] --- */
 @media only screen and (min-width: 568px) {
   .detail-table-top {
@@ -105,6 +117,10 @@
   .redirect-dashboard-btn {
     height: 3rem;
     width: 5.5rem;
+  }
+
+  .removal-msg {
+    font-size: 1.5em;
   }
 }
 
@@ -143,6 +159,10 @@
     font-size: 1.2em;
     height: 3.5rem;
     width: 6rem;
+  }
+
+  .removal-msg {
+    font-size: 1.7em;
   }
 }
 

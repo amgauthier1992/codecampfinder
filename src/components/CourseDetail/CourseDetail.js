@@ -14,6 +14,10 @@ class CourseDetail extends React.Component {
       return <></>
     }
 
+    if(course.Schedule === undefined){
+      return <div className='removal-msg'>Sorry, this course no longer exists on your course catalog.</div>
+    }
+
     let ui = {
       ScheduleType: 'Part time',
       Is_online: <i className="far fa-times-circle"></i>,
