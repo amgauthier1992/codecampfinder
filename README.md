@@ -53,6 +53,6 @@ Run `npm test` to ensure a stable build
 
 This is only the front end client, so to develop locally you'll need the backend server as well.
 
-To get the backend up and running see [https://github.com/amgauthier1992/codecampfinder-server](https://github.com/amgauthier1992/codecampfinder-server)
+To get the backend up and running see [https://github.com/amgauthier1992/codecampfinder-api](https://github.com/amgauthier1992/codecampfinder-api)
 
 Deployments are handled through Vercel (formerly known as Zeit) and can be run via `npm run deploy`
