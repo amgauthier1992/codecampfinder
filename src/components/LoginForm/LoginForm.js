@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import config from '../../config';
 import TokenService from '../../services/token-service';
 // import Spinner from '../Spinner/Spinner';
 import Validator from '../Validator/Validator';
@@ -30,7 +29,7 @@ class LoginForm extends React.Component {
     //   spinner: true
     // })
 
-    fetch(`${config.API_ENDPOINT}/users/login`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/login`, { 
       method: 'POST',
       body: JSON.stringify(currentUser),
       headers: {

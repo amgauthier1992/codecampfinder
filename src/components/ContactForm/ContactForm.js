@@ -1,6 +1,5 @@
 import React from 'react';
 import Validator from '../Validator/Validator';
-import config from '../../config';
 import './ContactForm.css';
 
 class ContactForm extends React.Component {
@@ -95,7 +94,7 @@ class ContactForm extends React.Component {
 
     //POST request here- we will need to `npm i nodemailer` for backend.
     //server sends the email. 
-    fetch(`${config.API_ENDPOINT}`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}`, {
       method: 'POST',
       body: JSON.stringify(email),
       headers: {

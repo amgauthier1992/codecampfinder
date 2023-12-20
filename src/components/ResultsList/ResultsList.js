@@ -27,7 +27,7 @@ export default class ResultsList extends React.Component {
       Course: course
     }
 
-    fetch(`${config.API_ENDPOINT}/user/courses`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/user/courses`, {
       method: 'POST',
       body: JSON.stringify(campObject), //we get course name from here
       headers: {

@@ -35,7 +35,7 @@ class ResultsPage extends React.Component {
       }
     }
 
-    fetch(`${config.API_ENDPOINT}/users/validate`, options)
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/validate`, options)
       .then(res => {
         if (!res.ok){
           throw new Error(res.statusText)

@@ -13,7 +13,7 @@ function deleteCourseRequest(course_id, cb) {
     }
   }
 
-  fetch(`${config.API_ENDPOINT}/user/course/${course_id}`, options)
+  fetch(`${process.env.REACT_APP_API_ENDPOINT}/user/course/${course_id}`, options)
     .then(res => {
       if (!res.ok) {
         throw new Error(res.statusText);

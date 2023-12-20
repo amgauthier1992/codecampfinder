@@ -210,7 +210,7 @@ class RegistrationForm extends React.Component {
 
     if (this.validateInputs()){
 
-      fetch(`${config.API_ENDPOINT}/users/register`, {
+      fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/register`, {
         method: 'POST',
         body: JSON.stringify(newUser),
         headers: {

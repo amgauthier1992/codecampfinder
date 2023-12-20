@@ -91,7 +91,7 @@ class SearchForm extends React.Component {
     // }) 
     
     if (this.validateStateCode()) {
-      fetch(`${config.API_ENDPOINT}/search`, {
+      fetch(`${process.env.REACT_APP_API_ENDPOINT}/search`, {
         method: 'POST',
         body: JSON.stringify(searchQuery),
         headers: {
